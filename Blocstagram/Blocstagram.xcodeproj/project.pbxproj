@@ -24,6 +24,10 @@
 		88ED0B951B73CC0E0099B5E8 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88ED0B8B1B73CC0E0099B5E8 /* 9.jpg */; };
 		88ED0B961B73CC0E0099B5E8 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88ED0B8C1B73CC0E0099B5E8 /* 10.jpg */; };
 		88ED0B991B73CC9B0099B5E8 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B981B73CC9B0099B5E8 /* ImagesTableViewController.m */; };
+		88ED0B9C1B74ECD70099B5E8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B9B1B74ECD70099B5E8 /* User.m */; };
+		88ED0B9F1B74EDC60099B5E8 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B9E1B74EDC60099B5E8 /* Media.m */; };
+		88ED0BA21B74EFD90099B5E8 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0BA11B74EFD90099B5E8 /* Comment.m */; };
+		88ED0BA51B74F09F0099B5E8 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0BA41B74F09F0099B5E8 /* DataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,14 @@
 		88ED0B8C1B73CC0E0099B5E8 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		88ED0B971B73CC9B0099B5E8 /* ImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
 		88ED0B981B73CC9B0099B5E8 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		88ED0B9A1B74ECD70099B5E8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		88ED0B9B1B74ECD70099B5E8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		88ED0B9D1B74EDC60099B5E8 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		88ED0B9E1B74EDC60099B5E8 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		88ED0BA01B74EFD90099B5E8 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		88ED0BA11B74EFD90099B5E8 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		88ED0BA31B74F09F0099B5E8 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		88ED0BA41B74F09F0099B5E8 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,14 @@
 				88ED0B971B73CC9B0099B5E8 /* ImagesTableViewController.h */,
 				88ED0B981B73CC9B0099B5E8 /* ImagesTableViewController.m */,
 				88ED0B5B1B73C6270099B5E8 /* Supporting Files */,
+				88ED0B9A1B74ECD70099B5E8 /* User.h */,
+				88ED0B9B1B74ECD70099B5E8 /* User.m */,
+				88ED0B9D1B74EDC60099B5E8 /* Media.h */,
+				88ED0B9E1B74EDC60099B5E8 /* Media.m */,
+				88ED0BA01B74EFD90099B5E8 /* Comment.h */,
+				88ED0BA11B74EFD90099B5E8 /* Comment.m */,
+				88ED0BA31B74F09F0099B5E8 /* DataSource.h */,
+				88ED0BA41B74F09F0099B5E8 /* DataSource.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -268,6 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88ED0BA21B74EFD90099B5E8 /* Comment.m in Sources */,
+				88ED0B9F1B74EDC60099B5E8 /* Media.m in Sources */,
+				88ED0BA51B74F09F0099B5E8 /* DataSource.m in Sources */,
+				88ED0B9C1B74ECD70099B5E8 /* User.m in Sources */,
 				88ED0B641B73C6270099B5E8 /* ViewController.m in Sources */,
 				88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */,
 				88ED0B5E1B73C6270099B5E8 /* main.m in Sources */,
