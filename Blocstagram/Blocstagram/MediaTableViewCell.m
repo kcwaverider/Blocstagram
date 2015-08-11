@@ -67,6 +67,7 @@ static NSParagraphStyle *paragraphStyle;
 - (NSAttributedString *) usernameAndCaptionString {
     // #1
     CGFloat usernameFontSize = 15;
+    CGFloat kernSize = 2.5;
     
     // #2 - Make a string that says "username caption"
     NSString *baseString = [NSString stringWithFormat:@"%@ %@", self.mediaItem.user.userName, self.mediaItem.caption];
@@ -76,26 +77,49 @@ static NSParagraphStyle *paragraphStyle;
     
     // #4
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
+    NSRange captionRange = [baseString rangeOfString:self.mediaItem.caption];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:@(kernSize) range:captionRange];
     
     return mutableUsernameAndCaptionString;
 }
 
 - (NSAttributedString *) commentString {
     NSMutableAttributedString *commentString = [[NSMutableAttributedString alloc] init];
+    NSMutableParagraphStyle *mutableParagraphStyle = [paragraphStyle mutableCopy];
     
+    UIColor *commentColor;
     for (Comment * comment in self.mediaItem.comments) {
-        // make a string that says "username comment followed by a line break
+        
+        
+        if ([self.mediaItem.comments indexOfObject:comment] == 0) {
+            commentColor = [UIColor colorWithRed:1.0 green:.45 blue:0.0 alpha:1];
+        } else {
+            commentColor = linkColor;
+        }
+        
+        if ([self.mediaItem.comments indexOfObject:comment] % 2 == 0) {
+            mutableParagraphStyle.alignment = NSTextAlignmentRight;
+        } else {
+            mutableParagraphStyle.alignment = NSTextAlignmentLeft;
+        }
+        
+        
+        // make a string that says "username comment" followed by a line break
         NSString *baseString = [NSString stringWithFormat:@"%@ %@\n", comment.from.userName, comment.text];
         
         // Make an attributed string, with the "username" bold
         
-        NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
+        NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : mutableParagraphStyle}];
         
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
+        NSLog(@"comment.from.userName = %@", comment.from.userName);
+        NSRange commentRange = [baseString rangeOfString:comment.text];
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
-        [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+        [oneCommentString addAttribute:NSForegroundColorAttributeName value:commentColor range:commentRange];
+        
+    
         
         [commentString appendAttributedString:oneCommentString];
     }
