@@ -10,6 +10,8 @@
 
 @class Media;
 
+typedef void (^NewItemCompletionBlock)(NSError *error);
+
 @interface DataSource : NSObject
 
 + (instancetype) sharedInstance;
