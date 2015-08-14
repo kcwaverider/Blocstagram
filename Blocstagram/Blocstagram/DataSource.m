@@ -174,7 +174,7 @@
     }
 }
 
-- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionhandler {
+- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler {
     if (self.isLoadingOlderItems == NO) {
         self.isLoadingOlderItems = YES;
         Media *media = [[Media alloc] init];
@@ -187,8 +187,8 @@
         
         self.isLoadingOlderItems = NO;
         
-        if (completionhandler) {
-            completionhandler(nil);
+        if (completionHandler) {
+            completionHandler(nil);
         }
         
     }
