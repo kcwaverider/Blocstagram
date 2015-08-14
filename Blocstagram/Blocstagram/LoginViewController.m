@@ -22,12 +22,16 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self loadLoginPage];
+}
+
+- (void) loadLoginPage {
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
     
     [self.view addSubview:webView];
     self.webView = webView;
+    NSLog(@"%f", CGRectGetMaxY(self.webView.bounds));
     
     self.title = NSLocalizedString(@"Login", @"Login");
     
@@ -38,6 +42,27 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
+        [self addHomeButton];
+}
+
+- (void) buttonClicked {
+    self.webView.delegate = nil;
+    [self loadLoginPage];
+}
+
+- (void) addHomeButton {
+    
+    UIButton *homeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [homeButton setTitle:@"Home" forState:UIControlStateNormal];
+    homeButton.frame =  CGRectMake(0, CGRectGetMaxY(self.view.bounds) - 40.0, CGRectGetMaxX(self.view.bounds), 40.0);
+    [homeButton addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    homeButton.backgroundColor = [UIColor blueColor];
+    [homeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    NSLog(@"Web View: %f", CGRectGetMaxY(self.webView.bounds));
+    NSLog(@"View: %f", CGRectGetMaxY(self.view.bounds));
+
+    
+    [self.view addSubview:homeButton];
 }
 
 - (void) dealloc {
