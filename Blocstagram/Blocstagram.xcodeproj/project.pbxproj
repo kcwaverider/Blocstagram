@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887D34E31B852D0A00550CDA /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */; };
 		88ED0B5E1B73C6270099B5E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B5D1B73C6270099B5E8 /* main.m */; };
 		88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B601B73C6270099B5E8 /* AppDelegate.m */; };
 		88ED0B641B73C6270099B5E8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B631B73C6270099B5E8 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 		0E0D624E9DC0C1775C8306E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5DFEC4E382F271926DE486D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6234E96DC171DF0B2563E8EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		887D34E11B852D0A00550CDA /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
+		887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		88ED0B581B73C6270099B5E8 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88ED0B5C1B73C6270099B5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88ED0B5D1B73C6270099B5E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				88ED0BA71B756EEE0099B5E8 /* MediaTableViewCell.m */,
 				88ED0BA91B7E2FF00099B5E8 /* LoginViewController.h */,
 				88ED0BAA1B7E2FF00099B5E8 /* LoginViewController.m */,
+				887D34E11B852D0A00550CDA /* MediaFullScreenViewController.h */,
+				887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				88ED0BAB1B7E2FF00099B5E8 /* LoginViewController.m in Sources */,
 				88ED0B9C1B74ECD70099B5E8 /* User.m in Sources */,
 				88ED0B641B73C6270099B5E8 /* ViewController.m in Sources */,
+				887D34E31B852D0A00550CDA /* MediaFullScreenViewController.m in Sources */,
 				88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */,
 				88ED0B5E1B73C6270099B5E8 /* main.m in Sources */,
 				88ED0B991B73CC9B0099B5E8 /* ImagesTableViewController.m in Sources */,

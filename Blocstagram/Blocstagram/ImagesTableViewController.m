@@ -12,8 +12,9 @@
 #import "User.h"
 #import "Comment.h"
 #import "MediaTAbleViewCell.h"
+#import "MediaFullScreenViewController.h"
 
-@interface ImagesTableViewController ()
+@interface ImagesTableViewController () <MediaTableViewCellDelegate>
 
 @end
 
@@ -77,6 +78,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     MediaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mediaCell" forIndexPath:indexPath];
+    cell.delegate = self;
     cell.mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
     
     return cell;
@@ -86,8 +88,6 @@
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
     return [MediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
 }
-
-
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -178,7 +178,30 @@
     }
 }
 
+#pragma mark - MediaTableViewCellDelegate
 
+-  (void) cell:(MediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
+    MediaFullScreenViewController *fullScreenVC = [[MediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
+    
+    [self presentViewController:fullScreenVC animated:YES completion:nil];
+}
+
+- (void) cell:(MediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (cell.mediaItem.caption.length > 0) {
+        [itemsToShare addObject:cell.mediaItem.caption];
+    }
+    
+    if (cell.mediaItem.image) {
+        [itemsToShare addObject:cell.mediaItem.image];
+    }
+    
+    if (itemsToShare > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+}
 
 
 /*
