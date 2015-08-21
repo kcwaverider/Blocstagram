@@ -31,6 +31,8 @@
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
+    self.title = NSLocalizedString(@"Blocstagram", "Name of Blocstagram app");
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

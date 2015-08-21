@@ -59,6 +59,7 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    [self addShareButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,6 +146,27 @@
         // #9
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     }
+}
+
+- (void) shareImage {
+    NSArray *shareArray = @[self.media.caption, self.media.image];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:shareArray applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
+- (void) addShareButton {
+    CGFloat width = 80;
+    CGFloat height = 70;
+    CGRect buttonBounds = CGRectMake(self.view.bounds.size.width - width,0, width, height);
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    shareButton.frame = buttonBounds;
+    
+    //shareButton.transform = CGAffineTransformMakeRotation(M_PI_2);
+
+    [shareButton setTitle: @"Share" forState:normal];
+    [shareButton addTarget:self action:@selector(shareImage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareButton];
+
 }
 
 /*
