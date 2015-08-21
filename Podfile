@@ -1,3 +1,4 @@
 pod 'UICKeyChainStore'
+pod 'AFNetworking'
 
-xcodeproj '/Users/kcwaverider/Code/Blocstagram/Blocstagram/Blocstagram.xcodeproj'
+xcodeproj '/Users/kcwaverider/Code/Blocstagram/Blocstagram/Blocstagram'
