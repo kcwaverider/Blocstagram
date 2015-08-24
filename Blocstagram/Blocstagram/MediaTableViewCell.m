@@ -210,6 +210,10 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 
+// read a two finger tap
+
+// instruct DataSource to redownload the image for that cell
+
 
 @end
 
