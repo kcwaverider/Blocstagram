@@ -10,6 +10,7 @@
 #import "Media.h"
 #import "Comment.h"
 #import "User.h"
+#import "DataSource.h"
 
 @interface MediaTableViewCell () <UIGestureRecognizerDelegate>
 
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) UITapGestureRecognizer *twoFingerTapRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
 @end
@@ -43,6 +45,11 @@ static NSParagraphStyle *paragraphStyle;
         self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
         self.tapGestureRecognizer.delegate = self;
         [self.mediaImageView addGestureRecognizer:self.tapGestureRecognizer];
+        
+        self.twoFingerTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTapFired:)];
+        self.twoFingerTapRecognizer.delegate = self;
+        [self addGestureRecognizer:self.twoFingerTapRecognizer];
+        self.twoFingerTapRecognizer.numberOfTouchesRequired = 2;
         
         self.longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressFired:)];
         self.longPressGestureRecognizer.delegate = self;
@@ -80,6 +87,7 @@ static NSParagraphStyle *paragraphStyle;
         self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
         
         [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
+        self.multipleTouchEnabled = YES;
     }
     
     return self;
@@ -194,6 +202,7 @@ static NSParagraphStyle *paragraphStyle;
 #pragma mark - Image View
 
 - (void) tapFired:(UITapGestureRecognizer *)sender {
+    NSLog(@"Single Touch");
     [self.delegate cell:self didTapImageView:self.mediaImageView];
 }
 
@@ -201,6 +210,12 @@ static NSParagraphStyle *paragraphStyle;
     if (sender.state == UIGestureRecognizerStateBegan) {
         [self.delegate cell:self didLongPressImageView:self.mediaImageView];
     }
+}
+
+- (void) twoFingerTapFired:(UITapGestureRecognizer *)sender {
+    NSLog(@"Double Touch");
+    self.mediaItem.image = nil;
+    [[DataSource sharedInstance] downloadImageForMediaItem:self.mediaItem];
 }
 
 #pragma mark - UIGestureRecognizerDelegate

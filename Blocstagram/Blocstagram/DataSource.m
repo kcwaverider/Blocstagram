@@ -275,6 +275,8 @@
             NSLog(@"Error downloading image: %@", error);
         }];
          
+    } else {
+        NSLog(@"Image already exists");
     }
 }
 
