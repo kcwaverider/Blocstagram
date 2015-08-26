@@ -22,6 +22,7 @@ typedef void (^NewItemCompletionBlock)(NSError *error);
 
 - (void) requestNewItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionhandler;
+- (void) downloadImageForMediaItem:(Media *)mediaItem;
 + (NSString *) instagramClientID;
 
 @end
