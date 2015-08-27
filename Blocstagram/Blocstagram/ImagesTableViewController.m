@@ -16,6 +16,9 @@
 
 @interface ImagesTableViewController () <MediaTableViewCellDelegate>
 
+@property (nonatomic, assign) BOOL tracking;
+@property (nonatomic, assign) BOOL decelarating;
+
 @end
 
 @implementation ImagesTableViewController
@@ -32,6 +35,8 @@
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
     self.title = NSLocalizedString(@"Blocstagram", "Name of Blocstagram app");
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -86,11 +91,14 @@
     return cell;
 }
 
+
 - (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+    if (mediaItem.downloadState == MediaDownloadStateNeedsImage && (self.decelarating == YES || self.tracking == YES)) {
         [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
     }
+    NSLog(@"Download Image for Row: %li", indexPath.row);
+    
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -175,8 +183,26 @@
 
 // #4
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.tracking) {
+        self.tracking = YES;
+        NSLog(@"Scrolling");
+    }
+    
+
     [self infiniteScrollIfNecessary];
 }
+
+- (void) scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    self.decelarating = YES;
+    NSLog(@"Decelaration TIME!!!");
+}
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.decelarating = NO;
+    NSLog(@"STOPPED");
+    
+}
+
 
 - (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
