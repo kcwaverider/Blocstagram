@@ -298,7 +298,7 @@
 }
 
 - (void) createOperationManager {
-    NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/1"];
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/"];
     self.instagramOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
     
     AFJSONResponseSerializer *jsonSerializer = [AFJSONResponseSerializer serializer];
@@ -311,10 +311,11 @@
 }
 
 - (void) toggleLikeOnMediaItem:(Media *)mediaItem withCompletionHandler:(void (^)(void))completionHandler {
-    NSString *urlString = [NSString stringWithFormat:@"media/%@/likes",mediaItem.idNumber];
+    NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
     NSDictionary *parameters = @{@"access_token": self.accessToken};
     
     if (mediaItem.likeState == LikeStateNotLiked) {
+        
         mediaItem.likeState = LikeStateLiking;
         
         [self.instagramOperationManager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -330,6 +331,7 @@
                 completionHandler();
             }
         }];
+        
     } else if (mediaItem.likeState == LikeStateLiked) {
         
         mediaItem.likeState = LikeStateUnliking;
@@ -340,7 +342,6 @@
             if (completionHandler) {
                 completionHandler();
             }
-            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             mediaItem.likeState = LikeStateLiked;
             
@@ -350,6 +351,7 @@
         }];
     }
 }
+
 
 
 @end
