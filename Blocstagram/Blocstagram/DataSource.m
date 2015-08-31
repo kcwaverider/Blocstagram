@@ -286,7 +286,7 @@
 }
 
 - (void) createOperationManager {
-    NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/1"];
+    NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/"];
     self.instagramOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
     
     AFJSONResponseSerializer *jsonSerializer = [AFJSONResponseSerializer serializer];
@@ -297,7 +297,6 @@
     AFCompoundResponseSerializer *serializer = [AFCompoundResponseSerializer compoundSerializerWithResponseSerializers:@[jsonSerializer, imageSerializer]];
     self.instagramOperationManager.responseSerializer = serializer;
 }
-
 
 @end
 
