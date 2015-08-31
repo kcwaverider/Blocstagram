@@ -21,7 +21,7 @@
     if (self) {
         self.strokeThickness = 1;
         self.radius = 12;
-        self.strokeColor = [UIColor purpleColor];
+        self.strokeColor = [UIColor greenColor];
     }
     return self;
 }
@@ -29,15 +29,16 @@
 - (CAShapeLayer*)circleLayer {
     if (!_circleLayer) {
         CGPoint arcCenter = CGPointMake(self.radius + self.strokeThickness / 2 + 5, self.radius + self.strokeThickness / 2 + 5);
-        CGRect rect = CGRectMake(0, 0, arcCenter.x * 2, arcCenter.y * 2);
-        UIBezierPath *smoothedPath = [UIBezierPath bezierPathWithArcCenter:arcCenter radius:self.radius startAngle:M_PI * 3/2 endAngle:M_PI /2 + M_PI * 5 clockwise:YES];
+        CGRect rect = CGRectMake(0, 0, arcCenter.x * 4, arcCenter.y * 2);
+        UIBezierPath *smoothedPath = [UIBezierPath bezierPathWithOvalInRect:rect];
+        //UIBezierPath *smoothedPath = [UIBezierPath bezierPathWithArcCenter:arcCenter radius:self.radius startAngle:M_PI * 3/2 endAngle:M_PI /2 + M_PI * 5 clockwise:YES];
         
         _circleLayer = [CAShapeLayer layer];
         _circleLayer.contentsScale = [[UIScreen mainScreen] scale];
         _circleLayer.frame = rect;
         _circleLayer.fillColor = [UIColor clearColor].CGColor;
         _circleLayer.strokeColor = self.strokeColor.CGColor;
-        _circleLayer.lineWidth = self.strokeThickness;
+        _circleLayer.lineWidth = self.strokeThickness * 3;
         _circleLayer.lineCap = kCALineCapRound;
         _circleLayer.lineJoin = kCALineJoinBevel;
         _circleLayer.path = smoothedPath.CGPath;
