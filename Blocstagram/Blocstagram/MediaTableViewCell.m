@@ -59,7 +59,7 @@ static NSParagraphStyle *paragraphStyle;
         self.commentLabel.backgroundColor = commentLabelGray;
         
         self.likeButton = [[LikeButton alloc] init];
-        [self likeButton addTarget:self action:@selector(likePressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.likeButton addTarget:self action:@selector(likePressed:) forControlEvents:UIControlEventTouchUpInside];
         self.likeButton.backgroundColor = usernameLabelGray;
         
         for (UIView *view in @[self.mediaImageView, self.usernameAndCaptionLabel, self.commentLabel, self.likeButton]) {
