@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881E5D4A1B95C17900025A51 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D491B95C17900025A51 /* ComposeCommentView.m */; };
 		887D34E31B852D0A00550CDA /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */; };
 		88ED0B5E1B73C6270099B5E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B5D1B73C6270099B5E8 /* main.m */; };
 		88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B601B73C6270099B5E8 /* AppDelegate.m */; };
@@ -50,6 +51,8 @@
 		0E0D624E9DC0C1775C8306E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5DFEC4E382F271926DE486D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6234E96DC171DF0B2563E8EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		881E5D481B95C17900025A51 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
+		881E5D491B95C17900025A51 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		887D34E11B852D0A00550CDA /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		88ED0B581B73C6270099B5E8 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +184,8 @@
 				88F4AED51B8F3C2900FF9C2B /* CircleSpinnerView.m */,
 				88F4AED71B8F9ABF00FF9C2B /* LikeButton.h */,
 				88F4AED81B8F9ABF00FF9C2B /* LikeButton.m */,
+				881E5D481B95C17900025A51 /* ComposeCommentView.h */,
+				881E5D491B95C17900025A51 /* ComposeCommentView.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */,
 				88ED0B5E1B73C6270099B5E8 /* main.m in Sources */,
 				88F4AED91B8F9ABF00FF9C2B /* LikeButton.m in Sources */,
+				881E5D4A1B95C17900025A51 /* ComposeCommentView.m in Sources */,
 				88F4AED61B8F3C2900FF9C2B /* CircleSpinnerView.m in Sources */,
 				88ED0B991B73CC9B0099B5E8 /* ImagesTableViewController.m in Sources */,
 			);
