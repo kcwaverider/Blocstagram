@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		881E5D4A1B95C17900025A51 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D491B95C17900025A51 /* ComposeCommentView.m */; };
+		881E5D4D1BA088FA00025A51 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D4C1BA088FA00025A51 /* CameraToolbar.m */; };
+		881E5D501BA0B4A400025A51 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D4F1BA0B4A400025A51 /* CameraViewController.m */; };
+		881E5D531BA0FCB300025A51 /* UIImage+ImageUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D521BA0FCB300025A51 /* UIImage+ImageUtilities.m */; };
 		887D34E31B852D0A00550CDA /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */; };
 		88ED0B5E1B73C6270099B5E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B5D1B73C6270099B5E8 /* main.m */; };
 		88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0B601B73C6270099B5E8 /* AppDelegate.m */; };
@@ -53,6 +56,12 @@
 		6234E96DC171DF0B2563E8EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		881E5D481B95C17900025A51 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
 		881E5D491B95C17900025A51 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
+		881E5D4B1BA088FA00025A51 /* CameraToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToolbar.h; sourceTree = "<group>"; };
+		881E5D4C1BA088FA00025A51 /* CameraToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToolbar.m; sourceTree = "<group>"; };
+		881E5D4E1BA0B4A400025A51 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		881E5D4F1BA0B4A400025A51 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		881E5D511BA0FCB300025A51 /* UIImage+ImageUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageUtilities.h"; sourceTree = "<group>"; };
+		881E5D521BA0FCB300025A51 /* UIImage+ImageUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageUtilities.m"; sourceTree = "<group>"; };
 		887D34E11B852D0A00550CDA /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		887D34E21B852D0A00550CDA /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		88ED0B581B73C6270099B5E8 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +195,12 @@
 				88F4AED81B8F9ABF00FF9C2B /* LikeButton.m */,
 				881E5D481B95C17900025A51 /* ComposeCommentView.h */,
 				881E5D491B95C17900025A51 /* ComposeCommentView.m */,
+				881E5D4B1BA088FA00025A51 /* CameraToolbar.h */,
+				881E5D4C1BA088FA00025A51 /* CameraToolbar.m */,
+				881E5D4E1BA0B4A400025A51 /* CameraViewController.h */,
+				881E5D4F1BA0B4A400025A51 /* CameraViewController.m */,
+				881E5D511BA0FCB300025A51 /* UIImage+ImageUtilities.h */,
+				881E5D521BA0FCB300025A51 /* UIImage+ImageUtilities.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -386,8 +401,11 @@
 				88ED0B641B73C6270099B5E8 /* ViewController.m in Sources */,
 				887D34E31B852D0A00550CDA /* MediaFullScreenViewController.m in Sources */,
 				88ED0B611B73C6270099B5E8 /* AppDelegate.m in Sources */,
+				881E5D501BA0B4A400025A51 /* CameraViewController.m in Sources */,
+				881E5D4D1BA088FA00025A51 /* CameraToolbar.m in Sources */,
 				88ED0B5E1B73C6270099B5E8 /* main.m in Sources */,
 				88F4AED91B8F9ABF00FF9C2B /* LikeButton.m in Sources */,
+				881E5D531BA0FCB300025A51 /* UIImage+ImageUtilities.m in Sources */,
 				881E5D4A1B95C17900025A51 /* ComposeCommentView.m in Sources */,
 				88F4AED61B8F3C2900FF9C2B /* CircleSpinnerView.m in Sources */,
 				88ED0B991B73CC9B0099B5E8 /* ImagesTableViewController.m in Sources */,
