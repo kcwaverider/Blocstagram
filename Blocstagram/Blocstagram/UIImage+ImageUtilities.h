@@ -13,5 +13,6 @@
 - (UIImage *) imageWithFixedRotation;
 - (UIImage *) imageResizedToMatchAspectRatioOfSize:(CGSize)size;
 - (UIImage *) imageCroppedToRect:(CGRect)cropRect;
+- (UIImage *) imageByScalingToSize:(CGSize)size andCroppingWithRect:(CGRect)rect;
 
 @end
