@@ -60,19 +60,19 @@
     NSDictionary *viewDictionary = NSDictionaryOfVariableBindings(_leftButton, _cameraButton, _rightButton, _whiteView, _purpleView);
     
     // The three buttons have equal widths and are distibuted across the whole view
-    NSArray *allButtonsHorizontalContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_leftButton][_cameraButton(==_leftButton)]|[_rightButton(==_leftButton)]|" options:kNilOptions metrics:nil views:viewDictionary];
+    NSArray *allButtonsHorizontalContraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_leftButton][_cameraButton(==_leftButton)][_rightButton(==_leftButton)]|" options:kNilOptions metrics:nil views:viewDictionary];
     
     NSArray *leftButtonVerticleConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_leftButton]" options:kNilOptions metrics:nil views:viewDictionary];
-    NSArray *cameraButtonVerticleConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V|[_cameraButton]|" options:kNilOptions metrics:nil views:viewDictionary];
-    NSArray *rightButtonVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V|-10-[_rightButton]|" options:kNilOptions metrics:nil views:viewDictionary];
+    NSArray *cameraButtonVerticleConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_cameraButton]|" options:kNilOptions metrics:nil views:viewDictionary];
+    NSArray *rightButtonVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_rightButton]|" options:kNilOptions metrics:nil views:viewDictionary];
     
     // The white view goes behind all the buttons, 10 points from the top.
     NSArray *whiteViewHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_whiteView]|" options:kNilOptions metrics:nil views:viewDictionary];
-    NSArray *whiteViewVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V|-10-[_whiteView]|" options:kNilOptions metrics:nil views:viewDictionary];
+    NSArray *whiteViewVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_whiteView]|" options:kNilOptions metrics:nil views:viewDictionary];
     
     // The purple view is positioned identically to the camera button
-    NSArray *purpleViewHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_leftButton][_purpleView][_rightputton]" options:NSLayoutFormatAlignAllBottom metrics:nil views:viewDictionary];
-    NSArray *purpleViewVerticleConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V|[_purpleView]" options:kNilOptions metrics:nil views:viewDictionary];
+    NSArray *purpleViewHorizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_leftButton][_purpleView][_rightButton]" options:NSLayoutFormatAlignAllBottom metrics:nil views:viewDictionary];
+    NSArray *purpleViewVerticleConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_purpleView]" options:kNilOptions metrics:nil views:viewDictionary];
     
     NSArray *allConstraintArrays = @[allButtonsHorizontalContraints, leftButtonVerticleConstraints, cameraButtonVerticleConstraints, rightButtonVerticalConstraints, whiteViewHorizontalConstraints, whiteViewVerticalConstraints, purpleViewHorizontalConstraints, purpleViewVerticleConstraints];
     

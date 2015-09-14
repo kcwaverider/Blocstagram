@@ -129,7 +129,7 @@
             
             // #11
             image = [image imageWithFixedRotation];
-            image = [image imageResizedToMathcAspectRatioOfSize:self.captureVideoPreviewLayer.bounds.size];
+            image = [image imageResizedToMatchAspectRatioOfSize:self.captureVideoPreviewLayer.bounds.size];
             
             // #12
             UIView *leftLine = self.verticalLines.firstObject;
