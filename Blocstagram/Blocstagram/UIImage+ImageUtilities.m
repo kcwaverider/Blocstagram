@@ -10,7 +10,7 @@
 
 @implementation UIImage (ImageUtilities)
 
-- (UIImage *) imageWithFixedRotation {
+- (UIImage *) imageWithFixedOrientation {
     // Do nothing if the orientation is already correct
     if (self.imageOrientation == UIImageOrientationUp) return [self copy];
     

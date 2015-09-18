@@ -14,8 +14,9 @@
 #import "MediaTAbleViewCell.h"
 #import "MediaFullScreenViewController.h"
 #import "CameraViewController.h"
+#import "ImageLibraryViewController.h"
 
-@interface ImagesTableViewController () <MediaTableViewCellDelegate, CameraViewControllerDelegate>
+@interface ImagesTableViewController () <MediaTableViewCellDelegate, CameraViewControllerDelegate, ImageLibraryViewControllerDelegate>
 
 @property (nonatomic, weak) UIImageView *lastTappedImageView;
 @property (nonatomic, weak) UIView *lastSelectedCommentView;
@@ -78,25 +79,51 @@
     return self;
 }
 
-#pragma mark - Camera and CameraViewControllerDelegate
+#pragma mark - Camera, CameraViewControllerDelegate, and ImageLibraryViewControllerDelegate
 
 - (void) cameraPressed:(UIBarButtonItem *) sender {
-    CameraViewController *cameraVC = [[CameraViewController alloc] init];
-    cameraVC.delegate = self;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cameraVC];
-    [self presentViewController:nav animated:YES completion:nil];
-    return;
+    
+    UIViewController *imageVC;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        CameraViewController *cameraVC = [[CameraViewController alloc] init];
+        cameraVC.delegate = self;
+        imageVC = cameraVC;
+    } else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        ImageLibraryViewController *imageLibraryVC = [[ImageLibraryViewController alloc] init];
+        imageLibraryVC.delegate = self;
+        imageVC = imageLibraryVC;
+    
+    }
+      
+    
+    if (imageVC) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:imageVC];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
 }
 
 - (void) cameraViewController:(CameraViewController *)cameraViewController didCompleteWithImage:(UIImage *)image {
     [cameraViewController dismissViewControllerAnimated:YES completion:^{
         if (image) {
-            NSLog(@"Got an image!");
+            NSLog(@"CamerViewController: Got an image!");
         } else {
-            NSLog(@"Closed without an image.");
+            NSLog(@"CamerViewController: Closed without an image.");
         }
     }];
 }
+
+- (void) imageLibraryViewController:(ImageLibraryViewController *)imageLibraryViewController didCompleteWithIMage:(UIImage *)image {
+    [imageLibraryViewController dismissViewControllerAnimated:YES completion:^{
+        if (image) {
+            NSLog(@"ImageLibraryViewController: Got an image!");
+        } else {
+            NSLog(@"ImageLibraryViewController: Closed without an image.");
+        }
+    }];
+}
+
+
 
 #pragma mark - Table view data source
 

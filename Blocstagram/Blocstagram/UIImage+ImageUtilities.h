@@ -10,7 +10,7 @@
 
 @interface UIImage (ImageUtilities)
 
-- (UIImage *) imageWithFixedRotation;
+- (UIImage *) imageWithFixedOrientation;
 - (UIImage *) imageResizedToMatchAspectRatioOfSize:(CGSize)size;
 - (UIImage *) imageCroppedToRect:(CGRect)cropRect;
 
