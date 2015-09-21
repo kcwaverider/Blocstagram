@@ -101,7 +101,7 @@ static NSString * const reuseIdentifier = @"cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
-    return self.result.count;
+    return 1;
 }
 
 
