@@ -20,6 +20,6 @@
 
 - (void) centerScrollView;
 
-- (void) recauculateZoomScale;
+- (void) recalculateZoomScale;
 
 @end

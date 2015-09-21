@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSArray *verticalLines;
 
 
+
 @end
 
 @implementation CropBox

@@ -73,10 +73,10 @@
     // #4
     self.scrollView.frame = self.view.bounds;
     
-    [self recauculateZoomScale];
+    [self recalculateZoomScale];
 }
 
-- (void) recauculateZoomScale {
+- (void) recalculateZoomScale {
 
     // #5
     CGSize scrollViewFramSize = self.scrollView.frame.size;

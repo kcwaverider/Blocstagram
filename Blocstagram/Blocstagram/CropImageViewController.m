@@ -15,6 +15,8 @@
 @interface CropImageViewController ()
 
 @property (nonatomic, strong) CropBox *cropBox;
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
 @property (nonatomic, assign) BOOL hasLoadedOnce;
 
 @end
@@ -40,7 +42,10 @@
     
     self.view.clipsToBounds = YES;
     
-    [self.view addSubview:self.cropBox];
+    [self createViews];
+    [self addViewsToViewHierarchy];
+    
+    //[self.view addSubview:self.cropBox];
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Crop", @"Crop Command") style:UIBarButtonItemStyleDone target:self action:@selector(cropPressed:)];
     
@@ -49,6 +54,27 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+
+}
+
+
+- (void) createViews {
+    self.topView = [UIToolbar new];
+    self.bottomView = [UIToolbar new];
+    self.cropBox = [CropBox new];
+    UIColor *whiteBG = [UIColor colorWithWhite:0.8 alpha:0.5];
+    self.topView.barTintColor = whiteBG;
+    self.bottomView.barTintColor = whiteBG;
+    self.topView.alpha = 0.5;
+    self.bottomView.alpha = 0.5;
+}
+
+- (void) addViewsToViewHierarchy {
+    NSMutableArray *views = [@[self.cropBox, self.topView, self.bottomView] mutableCopy];
+    
+    for (UIView *view in views) {
+        [self.view addSubview:view];
+    }
 }
 
 - (void) viewWillLayoutSubviews {
@@ -66,7 +92,7 @@
     self.scrollView.frame = self.cropBox.frame;
     self.scrollView.clipsToBounds = NO;
     
-    [self recauculateZoomScale];
+    [self recalculateZoomScale];
     
     if (self.hasLoadedOnce == NO) {
         self.scrollView.zoomScale = self.scrollView.minimumZoomScale;

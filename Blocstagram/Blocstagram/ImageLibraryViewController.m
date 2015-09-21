@@ -14,11 +14,13 @@
 
 @property (nonatomic, strong) PHFetchResult *result;
 
+
 @end
 
 @implementation ImageLibraryViewController
 
 static NSString * const reuseIdentifier = @"cell";
+static CGFloat const padding = 1;
 
 - (instancetype) init {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -37,6 +39,21 @@ static NSString * const reuseIdentifier = @"cell";
     UIImage *cancelImage = [UIImage imageNamed:@"x"];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithImage:cancelImage style:UIBarButtonItemStyleDone target:self action:@selector(cancelPressed:)];
     self.navigationItem.leftBarButtonItem = cancelButton;
+    
+    CGFloat width = CGRectGetWidth(self.view.frame);
+    
+    CGFloat minWidth = 55;
+    NSInteger divisor = width /minWidth;
+    CGFloat cellSize = width / divisor - (padding * 2);
+    
+    
+    
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
+    flowLayout.minimumInteritemSpacing = 0;
+    flowLayout.minimumLineSpacing = padding * 2;
+    flowLayout.footerReferenceSize = CGSizeMake(0, padding * 2);
+    
 }
 
 - (void) cancelPressed:(UIBarButtonItem *)sender {
@@ -46,15 +63,7 @@ static NSString * const reuseIdentifier = @"cell";
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    CGFloat width = CGRectGetWidth(self.view.frame);
-    CGFloat minWidth = 100;
-    NSInteger divisor = width /minWidth;
-    CGFloat cellSize = width / divisor;
     
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    flowLayout.itemSize = CGSizeMake(cellSize, cellSize);
-    flowLayout.minimumInteritemSpacing = 0;
-    flowLayout.minimumLineSpacing = 0;
 }
 
 - (void) loadAssets {
@@ -100,12 +109,13 @@ static NSString * const reuseIdentifier = @"cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-
     return self.result.count;
+    //return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.result.count;
 }
 
