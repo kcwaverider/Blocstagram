@@ -38,17 +38,5 @@
     }];
 }
 
-- (void) testCreateUserObject {
-    
-    NSDictionary *testDictionary = @{@"id":@"12345678",
-                                    @"username":@"flintstone",
-                                    @"fullname" : @"Fred Flintstone",
-                                    @"profileString":@"http://google.com/fred"
-                                    };
-    
-    User *user = [[User alloc] initWithDictionary:testDictionary];
-    
-    XCTAssertEqualObjects(user.idNumber, testDictionary[@"id"],@"nope they're not the same");
-    
-}
+
 @end

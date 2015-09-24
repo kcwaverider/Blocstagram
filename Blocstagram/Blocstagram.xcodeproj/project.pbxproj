@@ -38,6 +38,7 @@
 		88ED0BA51B74F09F0099B5E8 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0BA41B74F09F0099B5E8 /* DataSource.m */; };
 		88ED0BA81B756EEE0099B5E8 /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0BA71B756EEE0099B5E8 /* MediaTableViewCell.m */; };
 		88ED0BAB1B7E2FF00099B5E8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED0BAA1B7E2FF00099B5E8 /* LoginViewController.m */; };
+		88F214361BB176AA0059326D /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F214351BB176AA0059326D /* PostToInstagramViewController.m */; settings = {ASSET_TAGS = (); }; };
 		88F4AED61B8F3C2900FF9C2B /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F4AED51B8F3C2900FF9C2B /* CircleSpinnerView.m */; };
 		88F4AED91B8F9ABF00FF9C2B /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F4AED81B8F9ABF00FF9C2B /* LikeButton.m */; };
 		E43EAADD471BF287C98D0826 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6234E96DC171DF0B2563E8EB /* libPods.a */; };
@@ -109,6 +110,8 @@
 		88ED0BA71B756EEE0099B5E8 /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 		88ED0BA91B7E2FF00099B5E8 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		88ED0BAA1B7E2FF00099B5E8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		88F214341BB176AA0059326D /* PostToInstagramViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostToInstagramViewController.h; sourceTree = "<group>"; };
+		88F214351BB176AA0059326D /* PostToInstagramViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostToInstagramViewController.m; sourceTree = "<group>"; };
 		88F4AED41B8F3C2900FF9C2B /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
 		88F4AED51B8F3C2900FF9C2B /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
 		88F4AED71B8F9ABF00FF9C2B /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				881E5D591BA8A01200025A51 /* CropImageViewController.m */,
 				881E5D5B1BAB453C00025A51 /* ImageLibraryViewController.h */,
 				881E5D5C1BAB453C00025A51 /* ImageLibraryViewController.m */,
+				88F214341BB176AA0059326D /* PostToInstagramViewController.h */,
+				88F214351BB176AA0059326D /* PostToInstagramViewController.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				881E5D501BA0B4A400025A51 /* CameraViewController.m in Sources */,
 				881E5D4D1BA088FA00025A51 /* CameraToolbar.m in Sources */,
 				88ED0B5E1B73C6270099B5E8 /* main.m in Sources */,
+				88F214361BB176AA0059326D /* PostToInstagramViewController.m in Sources */,
 				881E5D5D1BAB453C00025A51 /* ImageLibraryViewController.m in Sources */,
 				88F4AED91B8F9ABF00FF9C2B /* LikeButton.m in Sources */,
 				881E5D531BA0FCB300025A51 /* UIImage+ImageUtilities.m in Sources */,
