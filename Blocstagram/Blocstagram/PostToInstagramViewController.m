@@ -256,6 +256,17 @@
         }
     }];
     
+    // Comic Filter
+    
+    [self.photoFilterOperationQueue addOperationWithBlock:^{
+        CIFilter *comicFilter = [CIFilter filterWithName:@"CIComicEffect"];
+        
+        if (comicFilter) {
+            [comicFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+            [self addCIImageToCollectionView:comicFilter.outputImage withFilterTitle:NSLocalizedString(@"Comic Book", @"Comic Book Filter")];
+        }
+    }];
+    
     // Drunk Filter
     
     [self.photoFilterOperationQueue addOperationWithBlock:^{
@@ -277,6 +288,25 @@
             }
             
             [self addCIImageToCollectionView:result withFilterTitle:NSLocalizedString(@"Drunk", "Drunk Filter")];
+        }
+    }];
+    
+    // Wavy Gravy Filter
+    
+    [self.photoFilterOperationQueue addOperationWithBlock:^{
+        CIFilter *wavyFilter = [CIFilter filterWithName:@"CICircularScreen"];
+        CIFilter *bloomFilter = [CIFilter filterWithName:@"CIBloom"];
+        
+        if (wavyFilter) {
+            [wavyFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+            
+            CIImage *wavyCIImage = wavyFilter.outputImage;
+            
+            if (bloomFilter) {
+                [bloomFilter setValue:wavyCIImage forKey:kCIInputImageKey];
+            }
+            
+            [self addCIImageToCollectionView:bloomFilter.outputImage withFilterTitle:NSLocalizedString(@"Wavy Gravy", "Wavy Gravy Filter")];
         }
     }];
 
