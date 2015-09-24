@@ -145,7 +145,7 @@ static NSString * const reuseIdentifier = @"cell";
     return cell;
 }
 
-- (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Thumbnail Clicked");
     PHAsset *asset = self.result[indexPath.row];
     
