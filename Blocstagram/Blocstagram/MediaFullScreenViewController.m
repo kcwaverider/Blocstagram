@@ -8,12 +8,15 @@
 
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
+#import "OutsideTapRecognizer.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+@property (nonatomic, strong) OutsideTapRecognizer *closeTap;
+@property (nonatomic, weak) UIWindow *window;
 
 @end
 
@@ -50,16 +53,28 @@
     // #3
     self.scrollView.contentSize = self.media.image.size;
     
-    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    //self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
     
     self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
     self.doubleTap.numberOfTapsRequired = 2;
     
-    [self.tap requireGestureRecognizerToFail:self.doubleTap];
     
-    [self.scrollView addGestureRecognizer:self.tap];
+    self.window = [UIApplication sharedApplication].delegate.window;
+    
+    //self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    //[self.window addGestureRecognizer:self.tap];
+    
+    self.closeTap = [[OutsideTapRecognizer alloc] initWithTarget:self action:@selector(tapFired)];
+    [self.closeTap setCancelsTouchesInView:NO];
+    [self.window addGestureRecognizer:self.closeTap];
+    
+
+    //[self.window addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     [self addShareButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tapFired) name:@"theDismissTap" object:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,7 +148,8 @@
 
 #pragma mark - Gesture Recognizers
 
-- (void) tapFired:(UITapGestureRecognizer *)sender {
+- (void) tapFired {
+    [self.window removeGestureRecognizer:self.closeTap];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -10,8 +10,11 @@
 #import "ImagesTableViewController.h"
 #import "LoginViewController.h"
 #import "DataSource.h"
+#import "OutsideTapRecognizer.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end
 
@@ -20,7 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
+    /*
+    OutsideTapRecognizer *recognizer = [[OutsideTapRecognizer alloc] initWithTarget:nil action:nil];
+    [recognizer setCancelsTouchesInView:NO];
+    [self.window addGestureRecognizer:recognizer];
+     */
+    
     [DataSource sharedInstance];
     
     UINavigationController *navVC = [[UINavigationController alloc] init];
