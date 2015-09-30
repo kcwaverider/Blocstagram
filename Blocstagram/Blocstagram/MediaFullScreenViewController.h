@@ -9,13 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class Media;
-@class MediaFullScreenViewController;
-
-@protocol MediaFullScreenViewControllerDelegate <NSObject>
-@optional
-- (void) closeWindow;
-
-@end
 
 @interface MediaFullScreenViewController : UIViewController
 
@@ -23,7 +16,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) Media *media;
 
-@property (nonatomic, weak) NSObject <MediaFullScreenViewControllerDelegate> *delegate;
+
 
 - (instancetype) initWithMedia:(Media *)media;
 

@@ -25,6 +25,9 @@
 
 @property (nonatomic, strong) UIDocumentInteractionController *documentController;
 
+@property (nonatomic, strong) NSArray *horizontallyRegularConstraints;
+@property (nonatomic, strong) NSArray *horizontallyCompactConstraints;
+
 @end
 
 @implementation PostToInstagramViewController

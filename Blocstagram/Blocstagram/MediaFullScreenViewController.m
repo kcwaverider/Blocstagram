@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
 @property (nonatomic, strong) OutsideTapRecognizer *closeTap;
-@property (nonatomic, weak) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
 
@@ -33,10 +33,9 @@
 }
     
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.window = [UIApplication sharedApplication].delegate.window;
     // #1
     self.scrollView = [UIScrollView new];
     self.scrollView.delegate = self;
@@ -53,27 +52,26 @@
     // #3
     self.scrollView.contentSize = self.media.image.size;
     
-    //self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self.window action:@selector(tapFired:)];
     
     self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
     self.doubleTap.numberOfTapsRequired = 2;
     
     
-    self.window = [UIApplication sharedApplication].delegate.window;
     
-    //self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
-    //[self.window addGestureRecognizer:self.tap];
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    [self.window addGestureRecognizer:self.tap];
     
-    self.closeTap = [[OutsideTapRecognizer alloc] initWithTarget:self action:@selector(tapFired)];
+    self.closeTap = [[OutsideTapRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
     [self.closeTap setCancelsTouchesInView:NO];
     [self.window addGestureRecognizer:self.closeTap];
     
-
-    //[self.window addGestureRecognizer:self.tap];
+    
+    [self.window addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     [self addShareButton];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tapFired) name:@"theDismissTap" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tapFired:) name:@"theDismissTap" object:nil];
     
 }
 
@@ -148,8 +146,9 @@
 
 #pragma mark - Gesture Recognizers
 
-- (void) tapFired {
-    [self.window removeGestureRecognizer:self.closeTap];
+- (void) tapFired:(UITapGestureRecognizer *) sender {
+    
+   // [self.window removeGestureRecognizer:self.closeTap];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

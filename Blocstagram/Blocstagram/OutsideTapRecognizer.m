@@ -19,7 +19,9 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-   
+    //NSLog(@"Event = %@", NSStringFromCGPoint(event.accessibilityActivationPoint) );
+    
+    //NSLog(@"touchesBegan: %@", touches.allObjects);
     [super touchesBegan:touches withEvent:event];
 }
 
@@ -32,6 +34,7 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+   // NSLog(@"Event = %@", event.description);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"theDismissTap" object:nil];
     
     
