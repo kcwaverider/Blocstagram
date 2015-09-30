@@ -183,7 +183,6 @@
 		88ED0B5A1B73C6270099B5E8 /* Blocstagram */ = {
 			isa = PBXGroup;
 			children = (
-				88ED0B821B73CBEF0099B5E8 /* Images */,
 				88ED0B5F1B73C6270099B5E8 /* AppDelegate.h */,
 				88ED0B601B73C6270099B5E8 /* AppDelegate.m */,
 				88ED0B621B73C6270099B5E8 /* ViewController.h */,
@@ -243,6 +242,7 @@
 		88ED0B741B73C6270099B5E8 /* BlocstagramTests */ = {
 			isa = PBXGroup;
 			children = (
+				88ED0B821B73CBEF0099B5E8 /* Images */,
 				88ED0B771B73C6270099B5E8 /* BlocstagramTests.m */,
 				88ED0B751B73C6270099B5E8 /* Supporting Files */,
 				8812B0C01BBB785A00AB9961 /* UserTests.m */,
@@ -275,6 +275,7 @@
 				88ED0B8C1B73CC0E0099B5E8 /* 10.jpg */,
 			);
 			name = Images;
+			path = ../Blocstagram;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

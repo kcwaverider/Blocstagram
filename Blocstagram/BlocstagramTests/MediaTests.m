@@ -44,10 +44,11 @@
                                               }
                                       };
     Media *testMedia = [[Media alloc] initWithDictionary:testDictionary];
-    //[[User alloc] initWithDictionary:testDictionary[@"user"]];
+    User *user = [[User alloc] initWithDictionary:testDictionary[@"user"]];
     //NSLog(@"%@ %@", testMedia.user.idNumber, testUser.idNumber);
     XCTAssertEqualObjects(testMedia.idNumber, testDictionary[@"id"], @"The id number should be equal");
-    XCTAssertEqualObjects(testMedia.user, [[User alloc] initWithDictionary:testDictionary[@"user"]], @"The Users should be the same");
+//    XCTAssertEqualObjects(testMedia.user, [[User alloc] initWithDictionary: testDictionary[@"user"]], @"The Users should be the same");
+    XCTAssertEqualObjects(testMedia.user, user, @"The Users should be the same");
     XCTAssertEqualObjects(testMedia.mediaURL, [NSURL URLWithString:testDictionary[@"images"][@"standard_resolution"][@"url"]], @"Media URLs should match");
     XCTAssertEqualObjects(testMedia.caption, testDictionary[@"caption"][@"text"]);
     
