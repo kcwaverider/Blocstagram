@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8812B0C11BBB785A00AB9961 /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8812B0C01BBB785A00AB9961 /* UserTests.m */; settings = {ASSET_TAGS = (); }; };
 		881E5D4A1B95C17900025A51 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D491B95C17900025A51 /* ComposeCommentView.m */; };
 		881E5D4D1BA088FA00025A51 /* CameraToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D4C1BA088FA00025A51 /* CameraToolbar.m */; };
 		881E5D501BA0B4A400025A51 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 881E5D4F1BA0B4A400025A51 /* CameraViewController.m */; };
@@ -58,6 +59,7 @@
 		0E0D624E9DC0C1775C8306E5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5DFEC4E382F271926DE486D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6234E96DC171DF0B2563E8EB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8812B0C01BBB785A00AB9961 /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
 		881E5D481B95C17900025A51 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
 		881E5D491B95C17900025A51 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		881E5D4B1BA088FA00025A51 /* CameraToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToolbar.h; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				88ED0B771B73C6270099B5E8 /* BlocstagramTests.m */,
 				88ED0B751B73C6270099B5E8 /* Supporting Files */,
+				8812B0C01BBB785A00AB9961 /* UserTests.m */,
 			);
 			path = BlocstagramTests;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8812B0C11BBB785A00AB9961 /* UserTests.m in Sources */,
 				88ED0B781B73C6270099B5E8 /* BlocstagramTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
