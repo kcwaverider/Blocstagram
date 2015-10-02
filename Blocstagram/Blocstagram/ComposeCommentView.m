@@ -55,13 +55,13 @@
     
     if (self.isWritingComment) {
         self.textView.backgroundColor = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1];
-        self.button.backgroundColor = [UIColor colorWithRed:0.345 green:0.318 blue:0.424 alpha:1];
+        self.button.backgroundColor = [UIColor colorWithRed:0.933 green:0.045 blue:0.123 alpha:1];
         
         CGFloat buttonX = CGRectGetWidth(self.bounds) - CGRectGetWidth(self.button.frame) - 20;
         self.button.frame = CGRectMake(buttonX, 10, 80, 20);
     } else {
         self.textView.backgroundColor = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1];
-        self.button.backgroundColor = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1];
+        self.button.backgroundColor = [UIColor colorWithRed:0.005 green:0.6 blue:0.6 alpha:1];
         
         self.button.frame = CGRectMake(10, 10, 80, 20);
     }
